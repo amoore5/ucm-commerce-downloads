@@ -1,8 +1,6 @@
 api = 2
 core = 7.x
 
-; Dependencies =================================================================
-
 projects[addressfield][type] = module
 projects[addressfield][subdir] = contrib
 projects[addressfield][version] = 1.x-dev
@@ -100,4 +98,4 @@ projects[ucm_commerce_downloads_config][version] = 1.0
 projects[ucm_commerce_downloads_config][download][type] = git
 projects[ucm_commerce_downloads_config][download][url] = git://github.com/amoore5/ucm-commerce-downloads-config.git
 projects[ucm_commerce_downloads_config][download][branch] = master
-projects[ucm_commerce_downloads_config][subdir] = custom/modules  
+projects[ucm_commerce_downloads_config][subdir] = custom
