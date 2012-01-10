@@ -93,3 +93,12 @@ projects[commerce_product_key][subdir] = contrib
 projects[commerce_product_key][version] = 1.0
 projects[commerce_product_key][download][type] = git
 projects[commerce_product_key][download][url] = http://git.drupal.org/project/commerce_product_key.git
+
+; Custom UC Merced Modules =====================================================
+
+projects[ucm_commerce_downloads_config][type] = module
+projects[ucm_commerce_downloads_config][version] = 1.0
+projects[ucm_commerce_downloads_config][download][type] = git
+projects[ucm_commerce_downloads_config][download][url] = git://github.com/amoore5/ucm-commerce-downloads-config.git
+projects[ucm_commerce_downloads_config][download][branch] = master
+projects[ucm_commerce_downloads_config][subdir] = custom/modules  
