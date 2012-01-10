@@ -40,10 +40,9 @@ projects[views][download][branch] = 7.x-3.x
 
 projects[features][type] = module
 projects[features][subdir] = contrib
-projects[features][version] = 1.0-alpha1
+projects[features][version] = 1.0-beta6
 projects[features][download][type] = git
 projects[features][download][url] = http://git.drupal.org/project/features.git
-projects[features][download][branch] = 7.x-3.x
 
 ; Drupal Commerce and Commerce contribs ========================================
 
