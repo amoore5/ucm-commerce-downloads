@@ -38,6 +38,13 @@ projects[views][download][type] = git
 projects[views][download][url] = http://git.drupal.org/project/views.git
 projects[views][download][branch] = 7.x-3.x
 
+projects[features][type] = module
+projects[features][subdir] = contrib
+projects[features][version] = 1.0-alpha1
+projects[features][download][type] = git
+projects[features][download][url] = http://git.drupal.org/project/features.git
+projects[features][download][branch] = 7.x-3.x
+
 ; Drupal Commerce and Commerce contribs ========================================
 
 projects[commerce][type] = module
@@ -60,3 +67,29 @@ projects[commerce_paypal][version] = 1.x-dev
 projects[commerce_paypal][download][type] = git
 projects[commerce_paypal][download][url] = http://git.drupal.org/project/commerce_paypal.git
 projects[commerce_paypal][download][branch] = 7.x-1.x
+
+; Drupal Commerce Downloads contribs ===========================================
+
+projects[commerce_file][type] = module
+projects[commerce_file][subdir] = contrib
+projects[commerce_file][version] = 1.0-beta3
+projects[commerce_file][download][type] = git
+projects[commerce_file][download][url] = http://git.drupal.org/project/commerce_file.git
+
+projects[commerce_features][type] = module
+projects[commerce_features][subdir] = contrib
+projects[commerce_features][version] = 1.0-alpha1
+projects[commerce_features][download][type] = git
+projects[commerce_features][download][url] = http://git.drupal.org/project/commerce_features.git
+
+projects[commerce_downloads_feature][type] = module
+projects[commerce_downloads_feature][subdir] = contrib
+projects[commerce_downloads_feature][version] = 1.0-beta1
+projects[commerce_downloads_feature][download][type] = git
+projects[commerce_downloads_feature][download][url] = http://git.drupal.org/project/commerce_downloads_feature.git
+
+projects[commerce_product_key][type] = module
+projects[commerce_product_key][subdir] = contrib
+projects[commerce_product_key][version] = 1.0
+projects[commerce_product_key][download][type] = git
+projects[commerce_product_key][download][url] = http://git.drupal.org/project/commerce_product_key.git
