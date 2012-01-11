@@ -30,7 +30,7 @@ projects[rules][download][url] = http://git.drupal.org/project/rules.git
 projects[rules][download][branch] = 7.x-2.x
 
 projects[views][type] = module
-projects[views][subdir] = contrib
+;projects[views][subdir] = contrib
 projects[views][version] = 3.x-dev
 projects[views][download][type] = git
 projects[views][download][url] = http://git.drupal.org/project/views.git
@@ -72,12 +72,14 @@ projects[commerce_file][subdir] = contrib
 projects[commerce_file][version] = 1.0-beta3
 projects[commerce_file][download][type] = git
 projects[commerce_file][download][url] = http://git.drupal.org/project/commerce_file.git
+projects[commerce_file][download][branch] = 7.x-1.x
 
 projects[commerce_features][type] = module
 projects[commerce_features][subdir] = contrib
 projects[commerce_features][version] = 1.0-alpha1
 projects[commerce_features][download][type] = git
 projects[commerce_features][download][url] = http://git.drupal.org/project/commerce_features.git
+projects[commerce_features][download][branch] = 7.x-1.x
 
 projects[commerce_downloads_feature][type] = module
 projects[commerce_downloads_feature][subdir] = contrib
