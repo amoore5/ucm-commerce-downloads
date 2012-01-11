@@ -422,7 +422,18 @@ function ucm_commerce_downloads_install() {
     ),
   );
   field_create_instance($instance);
-
+  
+  /*//Set the purchasable file file extensions default values accepted
+  $field = array(
+    'field_name' => 'field_purchaseable_file',
+    'field_instance' => array(
+      'settings' => array(
+        'file_extensions' => 'zip tar gz',
+      ),
+    ),
+  );
+  field_update_field($field);*/
+  
   // Enable default permissions for system roles.
   $filtered_html_permission = filter_permission_name($filtered_html_format);
   user_role_grant_permissions(DRUPAL_ANONYMOUS_RID, array('access content', 'access comments', $filtered_html_permission));
