@@ -1,8 +1,8 @@
 name = UCM Commerce Downloads
-description = Install with Drupal Commerce Downloads pre-configured for use at UC Merced
+description = Install with Commerce Downloads pre-configured for use at UC Merced
 core = 7.x
 version = VERSION
-distribution_name = UCM Drupal Commerce Downloads
+distribution_name = UCM Commerce Downloads
 
 ; Developers can feel free to invert the comments below to install modules that
 ; aid in module development.
