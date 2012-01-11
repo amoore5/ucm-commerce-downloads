@@ -16,7 +16,8 @@ define('DOWNLOADS_ADMIN_THEME', 'seven');
  * Perform actions to set up the site for this profile.
  */
 function ucm_commerce_downloads_install() {
-  // Set default file directories, if the folders don't exist create them
+  // Set default file directories and add htaccess fiels, if the folders don't 
+    //exist create them
   $ucm_public_path = conf_path() . '/files';
   $ucm_private_path = conf_path() . '/files/private';
   
@@ -31,7 +32,7 @@ function ucm_commerce_downloads_install() {
   }
   if(is_dir($ucm_private_path) || drupal_mkdir($ucm_private_path, NULL, TRUE)) {
     variable_set('file_private_path', $ucm_private_path);
-    file_create_htaccess($ucm_private_path`);
+    file_create_htaccess($ucm_private_path);
   }
   else {
     watchdog('ucm_commerce_downloads', 'Could not create private file path at '.
