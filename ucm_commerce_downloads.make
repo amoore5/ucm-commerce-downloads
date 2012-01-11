@@ -30,7 +30,7 @@ projects[rules][download][url] = http://git.drupal.org/project/rules.git
 projects[rules][download][branch] = 7.x-2.x
 
 projects[views][type] = module
-;projects[views][subdir] = contrib
+projects[views][subdir] = contrib
 projects[views][version] = 3.x-dev
 projects[views][download][type] = git
 projects[views][download][url] = http://git.drupal.org/project/views.git
@@ -41,6 +41,7 @@ projects[features][subdir] = contrib
 projects[features][version] = 1.0-beta6
 projects[features][download][type] = git
 projects[features][download][url] = http://git.drupal.org/project/features.git
+projects[features][download][branch] = 7.x-1.x
 
 ; Drupal Commerce and Commerce contribs ========================================
 
@@ -86,12 +87,14 @@ projects[commerce_downloads_feature][subdir] = contrib
 projects[commerce_downloads_feature][version] = 1.0-beta1
 projects[commerce_downloads_feature][download][type] = git
 projects[commerce_downloads_feature][download][url] = http://git.drupal.org/project/commerce_downloads_feature.git
+projects[commerce_downloads_feature][download][branch] = 7.x-1.x
 
 projects[commerce_product_key][type] = module
 projects[commerce_product_key][subdir] = contrib
 projects[commerce_product_key][version] = 1.0
 projects[commerce_product_key][download][type] = git
 projects[commerce_product_key][download][url] = http://git.drupal.org/project/commerce_product_key.git
+projects[commerce_product_key][download][branch] = 7.x-1.x
 
 ; Custom UC Merced Modules =====================================================
 
