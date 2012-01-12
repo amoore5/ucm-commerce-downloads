@@ -23,6 +23,10 @@ function ucm_commerce_downloads_install_tasks() {
   return $tasks;
 }
 function _ucm_commerce_downloads_set_defaults() {
+  /**
+  * Set the default file extensions allowed. For some reason this field doesn't
+  * exist during ucm_commerce_downloads.install
+  */
   $instance = field_info_instance('commerce_product', 'field_purchaseable_file', 'digital_product');
   $instance['settings']['file_extensions'] = 'zip tar gz';
   field_update_instance($instance);

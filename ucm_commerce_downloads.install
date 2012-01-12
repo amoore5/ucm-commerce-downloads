@@ -291,7 +291,7 @@ function ucm_commerce_downloads_install() {
   // Default "Basic page" to not be promoted and have comments disabled.
   variable_set('node_options_page', array('status'));
   variable_set('comment_page', COMMENT_NODE_HIDDEN);
-
+  
   // Don't display date and author information for "Basic page" nodes by default.
   variable_set('node_submitted_page', FALSE);
 
@@ -521,14 +521,7 @@ function _ucm_commerce_downloads_install() {
   // Apply the shortcut set to the first user.
   shortcut_set_assign_user($set, (object) array('uid' => 1));
   
-  /*
-  //Set extension types supported in digital product this should work, but doesn't :(
-  $instance = field_info_instance('commerce_product', 'field_purchaseable_file', 'digital_product');
-  $instance['settings']['file_extensions'] = 'zip tar gz';
-  field_update_instance($instance);
-  */
-}
-
-function ucm_commerce_downloads_install_finished() {
-  die('install finished called');
+  // Disable comments on on Product Display and Digital Product Display Nodes
+  variable_set('comment_digital_product_display', '1');
+  variable_set('comment_product_display', '1');
 }
