@@ -423,20 +423,8 @@ function ucm_commerce_downloads_install() {
   );
   field_create_instance($instance);
   
-  /*//Set the purchasable file file extensions default values accepted
-  $field = array(
-    'field_name' => 'field_purchaseable_file',
-    'field_instance' => array(
-      'settings' => array(
-        'file_extensions' => 'zip tar gz',
-      ),
-    ),
-  );
-  field_update_field($field);*/
-  
   // Enable default permissions for system roles.
   $filtered_html_permission = filter_permission_name($filtered_html_format);
-  user_role_grant_permissions(DRUPAL_ANONYMOUS_RID, array('access content', 'access comments', $filtered_html_permission));
   user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, array('access content', 'access comments', 'post comments', 'skip comment approval', $filtered_html_permission));
 
   // Create a default role for site administrators, with all available permissions assigned.
@@ -511,7 +499,6 @@ function _ucm_commerce_downloads_install() {
   $query->execute();
 
   // Give checkout access to anonymous and authenticated users.
-  user_role_grant_permissions(DRUPAL_ANONYMOUS_RID, array('access checkout'));
   user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, array('access checkout', 'view own commerce_order entities'));
 
   // Disable Views' Advanced Help module nag message until it's production ready.
@@ -531,4 +518,15 @@ function _ucm_commerce_downloads_install() {
 
   // Apply the shortcut set to the first user.
   shortcut_set_assign_user($set, (object) array('uid' => 1));
+  
+  /*
+  //Set extension types supported in digital product this should work, but doesn't :(
+  $instance = field_info_instance('commerce_product', 'field_purchaseable_file', 'digital_product');
+  $instance['settings']['file_extensions'] = 'zip tar gz';
+  field_update_instance($instance);
+  */
+}
+
+function ucm_commerce_downloads_install_finished() {
+  die('install finished called');
 }

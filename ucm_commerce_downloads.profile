@@ -18,13 +18,12 @@ function ucm_commerce_downloads_form_install_configure_form_alter(&$form, $form_
 */
 function ucm_commerce_downloads_install_tasks() {
   module_load_include('inc', 'system', 'system.admin');
-  /*
-  $tasks = array('system_file_system_settings' => array(
-    'display_name' => st('File Settings'),
-    'display' => TRUE,
-    'type' => 'form',
-    'run' => INSTALL_TASK_RUN_IF_NOT_COMPLETED,
+  $tasks = array('_ucm_commerce_downloads_set_defaults' => array(
   ));
   return $tasks;
-  */
+}
+function _ucm_commerce_downloads_set_defaults() {
+  $instance = field_info_instance('commerce_product', 'field_purchaseable_file', 'digital_product');
+  $instance['settings']['file_extensions'] = 'zip tar gz';
+  field_update_instance($instance);
 }
