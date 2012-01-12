@@ -3,7 +3,7 @@
 /**
  * @file
  * Performs a standard Drupal installation with additional configuration of the
- * Drupal Commerce modules and components.
+ * Drupal Commerce modules and components for UC Merced.
  */
 
 // Define some Commerce Downloads specific components.
@@ -16,8 +16,10 @@ define('DOWNLOADS_ADMIN_THEME', 'seven');
  * Perform actions to set up the site for this profile.
  */
 function ucm_commerce_downloads_install() {
-  // Set default file directories and add htaccess fiels, if the folders don't 
-    //exist create them
+  /* *
+   * Set default file directories and add htaccess fields, if the folders don't 
+   * exist create them
+  */
   $ucm_public_path = conf_path() . '/files';
   $ucm_private_path = conf_path() . '/files/private';
   
