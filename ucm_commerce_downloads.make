@@ -108,7 +108,7 @@ projects[ucm_commerce_downloads_config][subdir] = custom
 projects[UC-Merced][type] = module
 projects[UC-Merced][version] = 1.0
 projects[UC-Merced][download][type] = git
-projects[UC-Merced][download][url] = git://github.com/sburba/UC-Merced.git
+projects[UC-Merced][download][url] = git://github.com/sburba/uc-merced.git
 projects[UC-Merced][download][branch] = master
 projects[UC-Merced][subdir] = custom
 
