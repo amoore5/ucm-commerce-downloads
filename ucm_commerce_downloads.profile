@@ -30,4 +30,9 @@ function _ucm_commerce_downloads_set_defaults() {
   $instance = field_info_instance('commerce_product', 'field_purchaseable_file', 'digital_product');
   $instance['settings']['file_extensions'] = 'zip tar gz';
   field_update_instance($instance);
+  
+  //Set maximum number of purchasable files per product to unlimited
+  $field = field_info_field('field_purchaseable_file');
+  $field['cardinality'] = FIELD_CARDINALITY_UNLIMITED;
+  field_update_field($field);
 }
