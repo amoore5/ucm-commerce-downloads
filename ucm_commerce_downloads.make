@@ -31,5 +31,7 @@ projects[commerce_downloads_feature][version] = 1.0-beta1
 projects[commerce_features][type] = module
 projects[commerce_features][version] = 1.0-alpha1
 
-projects[corolla][type] = theme
-projects[corolla][version] = 1.21
+projects[ucm_commerce_downloads_config][type] = module
+projects[ucm_commerce_downloads_config][download][type] = git
+projects[ucm_commerce_downloads_config][download][url] = git://github.com/amoore5/ucm-commerce-downloads-config.git
+projects[ucm_commerce_downloads_config][download][branch] = master
