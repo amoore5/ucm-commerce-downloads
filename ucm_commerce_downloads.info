@@ -77,7 +77,7 @@ dependencies[] = commerce_downloads_feature
 ;dependencies[] = commerce_product_key_ui
 
 ; Install UC Merced Specific Modules
-;dependencies[] = ucm_commerce_downloads_config
+dependencies[] = ucm_commerce_downloads_config
 ;dependencies[] = uc_merced
 ;dependencies[] = commerce_fau
 
