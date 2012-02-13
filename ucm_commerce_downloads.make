@@ -2,20 +2,20 @@ api = 2
 core = 7.x
 
 projects[addressfield][type] = module
-projects[addressfield][version] = 1.0-beta1
+projects[addressfield][version] = 1.0-beta2
 
 projects[ctools][type] = module
 projects[ctools][version] = 1.0-rc1
 
 projects[entity][type] = module
-projects[entity][version] = 1.0-beta10
+projects[entity][version] = 1.0-rc1
 
 projects[rules][type] = module
-projects[rules][version] = 2.0-beta2
+projects[rules][version] = 2.0
 
 projects[views][type] = module
-projects[views][version] = 3.0-rc1
-
+projects[views][version] = 3.1
+;old versions from here down
 projects[features][type] = module
 projects[features][version] = 1.0-beta3
 
