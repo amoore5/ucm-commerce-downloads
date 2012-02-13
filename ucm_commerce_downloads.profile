@@ -1,38 +1,35 @@
 <?php
 
-/**
- * Implements hook_form_alter().
- *
- * Allows the profile to alter the site configuration form.
- */
-function ucm_commerce_downloads_form_install_configure_form_alter(&$form, $form_state) {
-  // Set a default name for the dev site.
-  $form['site_information']['site_name']['#default_value'] = t('Commerce Downloads');
-
-  // Set a default country so we can benefit from it on Address Fields.
-  $form['server_settings']['site_default_country']['#default_value'] = 'US';
-}
 
 /**
 * Implements hook_install_tasks().
 */
 function ucm_commerce_downloads_install_tasks() {
   module_load_include('inc', 'system', 'system.admin');
-  $tasks = array('_ucm_commerce_downloads_set_defaults' => array(
-  ));
+  $tasks = array('_ucm_commerce_downloads_set_defaults' => array());
   return $tasks;
 }
+
 function _ucm_commerce_downloads_set_defaults() {
-  /**
-  * Set the default file extensions allowed. For some reason this field doesn't
-  * exist during ucm_commerce_downloads.install
-  */
-  $instance = field_info_instance('commerce_product', 'field_purchaseable_file', 'digital_product');
-  $instance['settings']['file_extensions'] = 'zip tar gz';
-  field_update_instance($instance);
-  
-  //Set maximum number of purchasable files per product to unlimited
-  $field = field_info_field('field_purchaseable_file');
-  $field['cardinality'] = FIELD_CARDINALITY_UNLIMITED;
-  field_update_field($field);
+
+  //Add a manufacturer field to product
+  $field = array(
+		'field_name' => 'field_digital_product_mfg',
+		'type' => 'text',
+	);
+	field_create_field($field);
+	
+	$instance = array(
+		'field_name' => 'field_digital_product_mfg',
+		'entity_type' => 'commerce_product',
+		'bundle' => 'digital_product',
+		'label' => 'Manufacturer',
+		'required' => TRUE,
+		'widget' => array(
+			'module' => 'text',
+			'type' => 'text_textfield',
+			),
+	);
+	
+	field_create_instance($instance);
 }

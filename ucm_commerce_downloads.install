@@ -3,7 +3,7 @@
 /**
  * @file
  * Performs a standard Drupal installation with additional configuration of the
- * Drupal Commerce modules and components for UC Merced.
+ * Drupal Commerce modules and components.
  */
 
 // Define some Commerce Downloads specific components.
@@ -16,33 +16,6 @@ define('DOWNLOADS_ADMIN_THEME', 'seven');
  * Perform actions to set up the site for this profile.
  */
 function ucm_commerce_downloads_install() {
-  /* *
-   * Set default file directories and add htaccess fields, if the folders don't 
-   * exist create them
-  */
-  $ucm_public_path = conf_path() . '/files';
-  $ucm_private_path = conf_path() . '/files/private';
-  
-  if(is_dir($ucm_public_path) || drupal_mkdir($ucm_public_path, NULL, TRUE)) {
-    variable_set('file_public_path', $ucm_public_path);
-    file_create_htaccess($ucm_public_path, FALSE);
-  }
-  else {
-    watchdog('ucm_commerce_downloads', 'Could not create public file path at ' .
-    '%public_path. Please create this file manually and make it writable',
-    array('%public_path' => $ucm_public_path), WATCHDOG_ERROR);
-  }
-  if(is_dir($ucm_private_path) || drupal_mkdir($ucm_private_path, NULL, TRUE)) {
-    variable_set('file_private_path', $ucm_private_path);
-    file_create_htaccess($ucm_private_path);
-  }
-  else {
-    watchdog('ucm_commerce_downloads', 'Could not create private file path at '.
-    '%private_path. Please create this file manually and make it writable',
-    array('%private_path' => $ucm_private_path), WATCHDOG_ERROR);
-  }
-  
-  
   // Add text formats.
   $filtered_html_format = array(
     'format' => 'filtered_html',
@@ -291,7 +264,7 @@ function ucm_commerce_downloads_install() {
   // Default "Basic page" to not be promoted and have comments disabled.
   variable_set('node_options_page', array('status'));
   variable_set('comment_page', COMMENT_NODE_HIDDEN);
-  
+
   // Don't display date and author information for "Basic page" nodes by default.
   variable_set('node_submitted_page', FALSE);
 
@@ -424,9 +397,10 @@ function ucm_commerce_downloads_install() {
     ),
   );
   field_create_instance($instance);
-  
+
   // Enable default permissions for system roles.
   $filtered_html_permission = filter_permission_name($filtered_html_format);
+  user_role_grant_permissions(DRUPAL_ANONYMOUS_RID, array('access content', 'access comments', $filtered_html_permission));
   user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, array('access content', 'access comments', 'post comments', 'skip comment approval', $filtered_html_permission));
 
   // Create a default role for site administrators, with all available permissions assigned.
@@ -500,7 +474,8 @@ function _ucm_commerce_downloads_install() {
   }
   $query->execute();
 
-  // Give checkout access to authenticated users.
+  // Give checkout access to anonymous and authenticated users.
+  user_role_grant_permissions(DRUPAL_ANONYMOUS_RID, array('access checkout'));
   user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, array('access checkout', 'view own commerce_order entities'));
 
   // Disable Views' Advanced Help module nag message until it's production ready.
@@ -521,10 +496,38 @@ function _ucm_commerce_downloads_install() {
   // Apply the shortcut set to the first user.
   shortcut_set_assign_user($set, (object) array('uid' => 1));
   
-  // Disable comments on on Product Display and Digital Product Display Nodes
-  variable_set('comment_digital_product_display', '1');
+  // UCM Specific Changes
+  
+  //Set the default public and private file paths
+  $ucm_public_path = conf_path() . '/files';
+  $ucm_private_path = conf_path() . '/files/private';
+  
+  if(is_dir($ucm_public_path) || drupal_mkdir($ucm_public_path, NULL, TRUE)) {
+  	variable_set('file_public_path', $ucm_public_path);
+  	file_create_htaccess($ucm_public_path, FALSE);
+  }
+  else {
+  	watchdog('ucm_commerce_downloads', 'Could not create public file path at ' .
+  	'%public_path. Please create this folder and make it writable', 
+  	array('%public_path' => $ucm_public_path), WATCHDOG_ERROR);
+  }
+    if(is_dir($ucm_private_path) || drupal_mkdir($ucm_private_path, NULL, TRUE)) {
+  	variable_set('file_private_path', $ucm_private_path);
+  	file_create_htaccess($ucm_private_path);
+  }
+  else {
+  	watchdog('ucm_commerce_downloads', 'Could not create private file path at ' .
+  	'%private_path. Please create this folder and make it writable', 
+  	array('%private_path' => $ucm_private_path), WATCHDOG_ERROR);
+  }
+  
+  // Disable comments on Product Display and Digital Product Display Nodes
   variable_set('comment_product_display', '1');
+  variable_set('comment_digital_product_display', '1');
+  
+  // Set default file upload extensions
+  //variable_set('upload_extensions_default', 'zip tar gz');
   
   // Allow authenticated users to view own product keys
-  user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, array('view own product keys'));
+ // user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, array('view own product keys'));
 }
