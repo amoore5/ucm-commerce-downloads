@@ -16,13 +16,14 @@ projects[rules][version] = 2.0
 projects[views][type] = module
 projects[views][version] = 3.1
 
-;old versions from here down
+;features is old
 projects[features][type] = module
 projects[features][version] = 1.0-beta3
 
 projects[commerce][type] = module
-projects[commerce][version] = 1.0-rc1
+projects[commerce][version] = 1.2
 
+;commerce_file is old
 projects[commerce_file][type] = module
 projects[commerce_file][version] = 1.0-beta1
 
