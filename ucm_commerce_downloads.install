@@ -525,9 +525,26 @@ function _ucm_commerce_downloads_install() {
   variable_set('comment_product_display', '1');
   variable_set('comment_digital_product_display', '1');
   
-  // Set default file upload extensions
-  //variable_set('upload_extensions_default', 'zip tar gz');
-  
   // Allow authenticated users to view own product keys
  // user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, array('view own product keys'));
+
+   //Add a manufacturer field to product
+  $field = array(
+    'field_name' => 'field_digital_product_mfg',
+    'type' => 'text',
+  );
+  field_create_field($field);
+  
+  $instance = array(
+    'field_name' => 'field_digital_product_mfg',
+    'entity_type' => 'commerce_product',
+    'bundle' => 'digital_product',
+    'label' => 'Manufacturer',
+    'required' => TRUE,
+    'widget' => array(
+      'module' => 'text',
+      'type' => 'text_textfield',
+      ),
+  );
+  field_create_instance($instance);
 }
