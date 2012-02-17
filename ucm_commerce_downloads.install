@@ -493,8 +493,8 @@ function _ucm_commerce_downloads_install() {
   );
   shortcut_set_save($set);
 
-  // Apply the shortcut set to the first user.
-  shortcut_set_assign_user($set, (object) array('uid' => 1));
+  // Apply the shortcut set to administrators.
+  shortcut_set_assign_user($set, variable_get('user_admin_role'));
   
   // UCM Specific Changes
   
@@ -535,7 +535,7 @@ function _ucm_commerce_downloads_install() {
   variable_set('comment_digital_product_display', '1');
   
   // Allow authenticated users to view own product keys
- // user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, array('view own product keys'));
+  user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, array('view own product keys'));
 
    //Add a manufacturer field to product
   $field = array(
