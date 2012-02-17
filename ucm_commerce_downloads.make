@@ -46,6 +46,10 @@ projects[commerce_product_key][type] = module
 projects[commerce_product_key][version] = 1.0
 projects[commerce_product_key][subdir] = contrib
 
+projects[filefield_sources][type] = module
+projects[filefield_sources][version] = 1.4
+projects[filefield_sources][subdir] = contrib
+
 projects[ucm_commerce_downloads_config][type] = module
 projects[ucm_commerce_downloads_config][download][type] = git
 projects[ucm_commerce_downloads_config][download][url] = git://github.com/amoore5/ucm-commerce-downloads-config.git
