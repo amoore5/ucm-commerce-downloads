@@ -498,9 +498,10 @@ function _ucm_commerce_downloads_install() {
   
   // UCM Specific Changes
   
-  //Set the default public and private file paths
+  //Set the default public and private file paths and create file attach folder
   $ucm_public_path = conf_path() . '/files';
   $ucm_private_path = conf_path() . '/files/private';
+  $ucm_file_attach_path = conf_path() . '/files/file_attach';
   
   if(is_dir($ucm_public_path) || drupal_mkdir($ucm_public_path, NULL, TRUE)) {
   	variable_set('file_public_path', $ucm_public_path);
@@ -519,6 +520,14 @@ function _ucm_commerce_downloads_install() {
   	watchdog('ucm_commerce_downloads', 'Could not create private file path at ' .
   	'%private_path. Please create this folder and make it writable', 
   	array('%private_path' => $ucm_private_path), WATCHDOG_ERROR);
+  }
+  if(is_dir($ucm_file_attach_path) || drupal_mkdir($ucm_file_attach_path, NULL, TRUE)) {
+    file_create_htaccess($ucm_file_attach_path);
+  }
+  else {
+    watchdog('ucm_commerce_downloads', 'Could not create file attach path at ' .
+    '%fille_attach_path. Please create this folder and make it writable'),
+    array('%private_path' => %ucm_file_attach_path), WATCHDOG_ERROR);
   }
   
   // Disable comments on Product Display and Digital Product Display Nodes
