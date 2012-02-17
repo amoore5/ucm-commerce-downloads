@@ -526,7 +526,7 @@ function _ucm_commerce_downloads_install() {
   }
   else {
     watchdog('ucm_commerce_downloads', 'Could not create file attach path at ' .
-    '%fille_attach_path. Please create this folder and make it writable'),
+    '%fille_attach_path. Please create this folder and make it writable',
     array('%private_path' => %ucm_file_attach_path), WATCHDOG_ERROR);
   }
   
