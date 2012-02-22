@@ -475,7 +475,7 @@ function _ucm_commerce_downloads_install() {
   $query->execute();
 
   // Give checkout access to anonymous and authenticated users.
-  user_role_grant_permissions(DRUPAL_ANONYMOUS_RID, array('access checkout'));
+  //user_role_grant_permissions(DRUPAL_ANONYMOUS_RID, array('access checkout'));
   user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, array('access checkout', 'view own commerce_order entities'));
 
   // Disable Views' Advanced Help module nag message until it's production ready.
@@ -493,9 +493,7 @@ function _ucm_commerce_downloads_install() {
   );
   shortcut_set_save($set);
 
-  // Apply the shortcut set to administrators.
-  shortcut_set_assign_user($set, variable_get('user_admin_role'));
-  
+  shortcut_set_assign_user($set, (object) array('uid' => 1));
   // UCM Specific Changes
   
   //Set the default public and private file paths and create file attach folder
@@ -526,8 +524,8 @@ function _ucm_commerce_downloads_install() {
   }
   else {
     watchdog('ucm_commerce_downloads', 'Could not create file attach path at ' .
-    '%fille_attach_path. Please create this folder and make it writable',
-    array('%private_path' => %ucm_file_attach_path), WATCHDOG_ERROR);
+    '%file_attach_path. Please create this folder and make it writable',
+    array('%file_attach_path' => $ucm_file_attach_path), WATCHDOG_ERROR);
   }
   
   // Disable comments on Product Display and Digital Product Display Nodes
@@ -556,4 +554,5 @@ function _ucm_commerce_downloads_install() {
       ),
   );
   field_create_instance($instance);
+
 }

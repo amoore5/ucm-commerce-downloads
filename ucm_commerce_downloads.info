@@ -73,8 +73,9 @@ dependencies[] = commerce_tax_ui
 dependencies[] = commerce_file
 dependencies[] = commerce_features
 dependencies[] = commerce_downloads_feature
-;dependencies[] = commerce_product_key
-;dependencies[] = commerce_product_key_ui
+dependencies[] = commerce_product_key
+dependencies[] = commerce_product_key_ui
+dependencies[] = filefield_sources
 
 ; Install UC Merced Specific Modules
 dependencies[] = ucm_commerce_downloads_config
