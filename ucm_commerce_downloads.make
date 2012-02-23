@@ -18,7 +18,7 @@ projects[rules][version] = 2.0
 projects[rules][subdir] = contrib
 
 projects[views][type] = module
-projects[views][version] = 3.1
+projects[views][version] = 3.3
 projects[views][subdir] = contrib
 
 ;Features versions past 1.0-beta3 break the commerce_downloads_feature (tested up to 1.0beta6)
