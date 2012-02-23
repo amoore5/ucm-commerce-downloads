@@ -506,26 +506,26 @@ function _ucm_commerce_downloads_install() {
   	file_create_htaccess($ucm_public_path, FALSE);
   }
   else {
-  	watchdog('ucm_commerce_downloads', 'Could not create public file path at ' .
-  	'%public_path. Please create this folder and make it writable', 
-  	array('%public_path' => $ucm_public_path), WATCHDOG_ERROR);
+  	drupal_set_message('Could not create public file path at ' . 
+      $ucm_public_path . '. Please create this folder and make it writable', 
+  	'warning', TRUE);
   }
     if(is_dir($ucm_private_path) || drupal_mkdir($ucm_private_path, NULL, TRUE)) {
   	variable_set('file_private_path', $ucm_private_path);
   	file_create_htaccess($ucm_private_path);
   }
   else {
-  	watchdog('ucm_commerce_downloads', 'Could not create private file path at ' .
-  	'%private_path. Please create this folder and make it writable', 
-  	array('%private_path' => $ucm_private_path), WATCHDOG_ERROR);
+  	drupal_set_message('Could not create private file path at ' . 
+      $ucm_private_path . '. Please create this folder and make it writable', 
+    'warning', TRUE);
   }
   if(is_dir($ucm_file_attach_path) || drupal_mkdir($ucm_file_attach_path, NULL, TRUE)) {
     file_create_htaccess($ucm_file_attach_path);
   }
   else {
-    watchdog('ucm_commerce_downloads', 'Could not create file attach path at ' .
-    '%file_attach_path. Please create this folder and make it writable',
-    array('%file_attach_path' => $ucm_file_attach_path), WATCHDOG_ERROR);
+    drupal_set_message('Could not create file attach file path at ' . 
+      $ucm_file_attach_path . '. Please create this folder and make it writable', 
+    'warning', TRUE);
   }
   
   // Disable comments on Product Display and Digital Product Display Nodes
