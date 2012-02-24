@@ -76,10 +76,12 @@ dependencies[] = commerce_downloads_feature
 dependencies[] = commerce_product_key
 dependencies[] = commerce_product_key_ui
 dependencies[] = filefield_sources
+dependencies[] = quicktabs
 
 ; Install UC Merced Specific Modules
 dependencies[] = ucm_commerce_downloads_config
 dependencies[] = uc_merced
 dependencies[] = commerce_fau
+dependencies[] = commerce_downloads_reports
 
 files[] = ucm_commerce_downloads.profile

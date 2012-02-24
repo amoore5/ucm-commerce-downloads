@@ -50,6 +50,10 @@ projects[filefield_sources][type] = module
 projects[filefield_sources][version] = 1.4
 projects[filefield_sources][subdir] = contrib
 
+projects[quicktabs][type] = module
+projects[quicktabs][version] = 3.3
+projects[quicktabs]subdir] = contrib
+
 projects[ucm_commerce_downloads_config][type] = module
 projects[ucm_commerce_downloads_config][download][type] = git
 projects[ucm_commerce_downloads_config][download][url] = git://github.com/amoore5/ucm-commerce-downloads-config.git
@@ -67,3 +71,9 @@ projects[commerce_fau][download][type] = git
 projects[commerce_fau][download][url] = git://github.com/sburba/commerce-fau.git
 projects[commerce_fau][download][branch] = master
 projects[commerce_fau][subdir] = custom
+
+projects[commerce_downloads_reports][type] = module
+projects[commerce_downloads_reports][download][type] = git
+projects[commerce_downloads_reports][download][url] = git@github.com:sburba/ucm-commerce-downloads-reports.git
+projects[commerce_downloads_reports][download][branch] = master
+projects[commerce_downloads_reports][subdir] = custom
