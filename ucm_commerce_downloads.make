@@ -62,6 +62,10 @@ projects[uuid][type] = module
 projects[uuid][version] = 1.0-alpha3
 projects[uuid][subdir] = contrib
 
+projects[webform][type] = module
+projects[webform][version] = 3.18
+projects[webform][subdir] = contrib
+
 ; Drupal Commerce and Commerce contribs ========================================
 
 projects[commerce][type] = module
