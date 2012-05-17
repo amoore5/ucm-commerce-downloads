@@ -54,6 +54,14 @@ projects[views_data_export][type] = module
 projects[views_data_export][version] = 3.0-beta5
 projects[views_data_export][subdir] = contrib
 
+projects[node_export][type] = module
+projects[node_export][version] = 3.0-rc2
+projects[node_export][subdir] = contrib
+
+projects[uuid][type] = module
+projects[uuid][version] = 1.0-alpha3
+projects[uuid][subdir] = contrib
+
 ; Drupal Commerce and Commerce contribs ========================================
 
 projects[commerce][type] = module
@@ -100,7 +108,9 @@ projects[ucm_commerce_downloads_reports][subdir] = custom
 projects[ucm_commerce_downloads_feature][type] = module
 projects[ucm_commerce_downloads_feature][download][type] = git
 projects[ucm_commerce_downloads_feature][download][url] = git@github.com:sburba/ucm-commerce-downloads-feature.git
+projects[ucm_commerce_downloads_feature][subdir] = custom
 
 projects[ucm_commerce_downloads_forms][type] = module
 projects[ucm_commerce_downloads_forms][download[type] = git
 projects[ucm_commerce_downloads_forms][download][url] = git@github.com:sburba/ucm-commerce-downloads-forms.git
+projects[ucm_commerce_downloads_forms][subdir] = custom

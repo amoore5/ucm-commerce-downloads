@@ -43,6 +43,16 @@ dependencies[] = rules
 dependencies[] = rules_admin
 dependencies[] = views
 dependencies[] = views_ui
+dependencies[] = features
+dependencies[] = commerce_features
+dependencies[] = strongarm
+dependencies[] = commerce_file
+dependencies[] = filefield_sources
+dependencies[] = views_data_export
+dependencies[] = quicktabs
+dependencies[] = uuid
+dependencies[] = node_export
+dependencies[] = node_export_features
 
 ; Install the Commerce modules.
 dependencies[] = commerce
@@ -67,19 +77,19 @@ dependencies[] = commerce_tax
 dependencies[] = commerce_tax_ui
 
 ; Install UC Merced Specific modules
-dependencies[] = features
-dependencies[] = commerce_features
-dependencies[] = strongarm
-dependencies[] = commerce_file
-dependencies[] = filefield_sources
-dependencies[] = ucm_commerce_downloads_reports
+
 dependencies[] = commerce_fau
 dependencies[] = uc_merced
-dependencies[] = views_data_export
 dependencies[] = ucm_cas_config
-dependencies[] = quicktabs
+dependencies[] = ucm_commerce_downloads_reports
+dependencies[] = ucm_commerce_downloads_feature
+dependencies[] = ucm_commerce_downloads_forms
 
 files[] = ucm_commerce_downloads.profile
 
 
+; Information added by drush on 2012-05-16
+version = "master-dev"
+project = "ucm_commerce_downloads"
+datestamp = "1337209388"
 
